@@ -1,1 +1,292 @@
 // main SASS file
+// Imports
+@import "_variables";
+@import "_mixins";
+
+/***********************************************
+                NOTES
+light blue  #C7F7FF
+med blue    #89C0C9
+dark blue   #3a5E63
+light brown #C9A689
+dark brown  #7C593C
+light grey  #d4d4d4
+dark grey   #222
+
+                DEFAULTS
+***********************************************/
+
+* {
+    padding: 0;
+    margin: 0;
+    @include box-sizing(border-box);
+    :after,
+    :before {
+        @include box-sizing(inherit);
+    }
+}
+
+html {
+    font-size: 16px;
+    font-family: $sansSerifStack;
+    /* default for whole page */
+    line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: $serifStack;
+    /* serif for the headings */
+}
+
+ul {
+    list-style: none;
+}
+
+
+/***********************************************
+                SPECIAL
+***********************************************/
+
+.clearfix:after {
+    display: table;
+    clear: both;
+    content: "";
+}
+
+
+/***********************************************
+                LAYOUT
+***********************************************/
+
+.bg-header {
+    @extend .clearfix;
+    background-color: $white;
+    background-color: $lightBlue;
+    color: $darkGrey;
+    border-bottom: $defaultSize solid $medBlue;
+    border-top: $defaultSize solid $darkBlue;
+    position: relative;
+    :before,
+    :after {
+        content: "";
+        position: absolute;
+        bottom: -$defaultSize;
+        width: $width30;
+        height: $defaultSize;
+        background-color: $darkBlue;
+    }
+    :before {
+        left: 0
+    }
+    :after {
+        right: 0;
+    }
+}
+
+.bg-focal {
+    @extend .clearfix;
+    background-color: $lightBrown;
+    color: $darkBrown;
+}
+
+.bg-content1 {
+    @extend .clearfix;
+    background-color: $white;
+    color: $darkGrey;
+}
+
+.bg-content2 {
+    @extend .clearfix;
+    background-color: $lightBlue;
+    color: $darkBlue;
+}
+
+.bg-footer {
+    @extend .clearfix;
+    background-color: $white;
+    color: $lightGrey;
+}
+
+header {
+    width: 400px;
+    /* default */
+    margin: 0 auto;
+    position: relative;
+    h1 {
+        width: $widthFull;
+        padding: 0 $doubleSize;
+    }
+    nav {
+        width: $widthFull;
+        >ul li {
+            width: $widthFull;
+            float: none;
+        }
+    }
+}
+
+.focal {
+    width: 400px;
+    /* default */
+    margin: 0 auto;
+}
+
+.content1,
+.content2 {
+    padding: $doubleSize 0;
+}
+
+.row {
+    clear: both;
+}
+
+.col-2 {
+    width: 50%;
+    float: left;
+    padding-bottom: $doubleSize;
+    border-left: 1px solid $darkBlue;
+    margin-bottom: $doubleSize;
+    footer &:first-child {
+        border-left: 0;
+    }
+}
+
+footer {
+    & {
+        padding: $doubleSize 0;
+    }
+    & p:last-child {}
+}
+
+
+/***********************************************
+                NAVIGATION
+***********************************************/
+
+header {
+    nav {
+        padding: $doubleSize 0;
+        clear: both;
+        >ul>li>a {
+            display: block;
+            text-align: center;
+            text-decoration: none;
+            color: $darkGrey;
+            font-size: $augmentedFourthSize1;
+            letter-spacing: $quarterSize;
+            border: 1px solid $lightGrey;
+            border-bottom: none;
+            padding: 1.0rem $doubleSize;
+            line-height: 1;
+            background-color: $white;
+            :hover {
+                font-weight: 700;
+                color: $darkBrown;
+            }
+        }
+    }
+}
+
+
+/***********************************************
+                CONTENT
+***********************************************/
+
+header h1 {
+    color: $darkBrown;
+    letter-spacing: 0.1rem;
+    i.fa-lg {
+        display: block;
+        width: 25%;
+        float: left;
+        font-size: 7rem;
+        line-height: 12.7936rem;
+        color: $lightBrown;
+        ~ span {
+            float: right;
+            width: 75%;
+            font-size: $augmentedFourthSize4;
+            /**
+    2 lines of 3.998 * 1.6 = 12.7936
+    **/
+            padding-left: $defaultSize;
+            text-align: right;
+        }
+    }
+}
+
+.focal {
+    h2 {
+        font-size: $augmentedFourthSize2;
+        line-height: 1.2;
+        padding: $doubleSize $doubleSize $defaultSize $doubleSize;
+    }
+    .author {
+        font-size: $defaultSize;
+        padding: $twentiethSize $doubleSize $doubleSize;
+    }
+}
+
+.content1 {
+    h3 {
+        font-size: $augmentedFourthSize2;
+        padding: $twentiethSize $doubleSize $doubleSize;
+        i {
+            vertical-align: middle;
+            padding-right: $doubleSize;
+        }
+    }
+    p {
+        font-size: $augmentedFourthSize1;
+        padding: $halfSize $doubleSize $doubleSize;
+    }
+}
+
+.content2 {
+    h4 {
+        font-size: $augmentedFourthSize2;
+        padding: $defaultSize $doubleSize 0rem;
+    }
+    p {
+        font-size: $augmentedFourthSize1;
+        padding: $halfSize $doubleSize $defaultSize;
+    }
+    li {
+        padding: $halfSize $doubleSize;
+        font-size: $augmentedFourthSize1;
+    }
+}
+
+
+/***********************************************
+                FOOTER
+***********************************************/
+
+footer {
+    h4 {
+        font-size: $augmentedFourthSize1;
+        padding: $halfSize $doubleSize;
+        color: $darkBrown;
+    }
+    p {
+        font-size: $defaultSize;
+        padding: $halfSize $doubleSize;
+        color: $darkGrey;
+    }
+    .fa-circle {
+        color: $darkGrey;
+    }
+    h4[lang=de] {
+        display: block;
+    }
+    h4[lang=en],
+    h4[lang=ar],
+    h4[lang=ru] {
+        display: none;
+    }
+}
+
+@import "_queries";

@@ -1,0 +1,332 @@
+@import "_variables";
+// Viewport Breakpoints
+$breakpoint-small: 701px;
+$breakpoint-medium: 900px;
+$breakpoint-large: 1400px;
+
+/***********************************************
+                MEDIA QUERIES
+***********************************************/
+
+@media all and (min-width: $breakpoint-small) and (max-width: $breakpoint-medium) {
+    header {
+        width: $breakpoint-small - 1;
+        margin: 0 auto;
+        min-height: 8rem;
+        :before,
+        :after {
+            width: 230px;
+        }
+        h1 {
+            width: $widthFull;
+            color: $darkBrown;
+            i.fa-lg {
+                display: inline;
+                color: $darkBrown;
+                vertical-align: baseline;
+                float: none;
+                font-size: $quadrupleSize;
+                line-height: $sixTimesSize;
+                ~ span {
+                    float: none;
+                    letter-spacing: $quarterSize;
+                    font-size: $augmentedFourthSize4;
+                    /**
+        1 lines of 3.998 * 1.6 = 6.3968
+        **/
+                    text-align: left;
+                }
+            }
+        }
+        nav {
+            position: static;
+            clear: both;
+            width: $widthFull;
+            padding: 0;
+            >ul>li {
+                width: 20%;
+                float: left;
+                >a {
+                    font-size: $defaultSize;
+                    line-height: $doubleSize;
+                    min-height: 6rem;
+                    border: none;
+                    border-left: 1px solid $lightGrey;
+                    padding: $defaultSize;
+                    background-color: $white;
+                    :last-child {
+                        border-right: 1px solid $lightGrey;
+                    }
+                }
+            }
+        }
+    }
+    .focal,
+    .content1,
+    .content2,
+    footer {
+        width: 700px;
+        margin: 0 auto;
+    }
+    .col-4 {
+        width: 50%;
+        float: left;
+    }
+    .content2 h4,
+    li {
+        font-size: $augmentedFourthSize1;
+    }
+    .fa-circle {
+        color: $medBlue;
+    }
+    .col-2:last-child {
+        unicode-bidi: bidi-override;
+        direction: rtl;
+    }
+    h4[lang=ar] {
+        display: block;
+    }
+    h4[lang=de],
+    h4[lang=en],
+    h4[lang=ru] {
+        display: none;
+    }
+}
+
+@media all and (min-width:$breakpoint-medium+1) and (max-width: $breakpoint-large) {
+    header {
+        width: $breakpoint-medium;
+        margin: 0 auto;
+        :before,
+        :after {
+            width: 300px;
+        }
+        h1 {
+            width: $widthFull;
+            color: $darkBlue;
+            i.fa-lg {
+                display: inline;
+                color: $darkBlue;
+                vertical-align: baseline;
+                float: none;
+                font-size: $quadrupleSize;
+                line-height: $sixTimesSize;
+                ~ span {
+                    float: none;
+                    letter-spacing: $quarterSize;
+                    font-size: $augmentedFourthSize4;
+                    /**
+        1 lines of 3.998 * 1.6 = 6.3968
+        **/
+                    text-align: left;
+                }
+            }
+        }
+        nav {
+            position: static;
+            clear: both;
+            width: $widthFull;
+            padding: 0;
+            >ul>li {
+                width: 20%;
+                float: left;
+                background-color: $white;
+                a {
+                    font-size: $defaultSize;
+                    line-height: $doubleSize;
+                    min-height: $doubleSize;
+                    border: none;
+                    border-left: 1px solid $lightGrey;
+                    padding: 0 $defaultSize;
+                    margin: $defaultSize 0;
+                    background-color: $white;
+                }
+                :first-child a {
+                    border-left: none;
+                }
+            }
+        }
+    }
+    .focal,
+    .content1,
+    .content2,
+    footer {
+        width: 900px;
+        margin: 0 auto;
+    }
+    h2,
+    p.author {
+        width: 600px;
+        margin: 0 auto;
+    }
+    .col-3 {
+        float: left;
+        width: 30%;
+        margin-left: 5%;
+        :first-child {
+            margin-left: 0;
+        }
+    }
+    .col-4 {
+        width: 22%;
+        margin-left: 4%;
+        float: left;
+        :first-child {
+            margin-left: 0;
+        }
+    }
+    h3 {
+        font-size: $augmentedFourthSize2;
+        font-weight: 100;
+        .fa-2x {
+            font-size: $augmentedFourthSize2;
+            padding-right: $defaultSize;
+        }
+    }
+    .content2 {
+        h4,
+        li {
+            font-size: $augmentedFourthSize1;
+        }
+        p {
+            font-size: $defaultSize;
+            font-weight: 400;
+        }
+    }
+    .fa-circle {
+        color: $lightBrown;
+    }
+    h4[lang=ru] {
+        display: block;
+    }
+    h4[lang=de],
+    h4[lang=ar],
+    h4[lang=en] {
+        display: none;
+    }
+}
+
+@media all and (min-width:$breakpoint-large+1) {
+    header {
+        width: 1400px;
+        margin: 0 auto;
+        :before,
+        :after {
+            width: 450px;
+        }
+        h1 {
+            width: $widthFull;
+            color: $darkBrown;
+            i.fa-lg {
+                display: inline;
+                color: $darkBrown;
+                vertical-align: baseline;
+                float: none;
+                font-size: $quadrupleSize;
+                line-height: $sixTimesSize;
+                ~ span {
+                    float: none;
+                    letter-spacing: $quarterSize;
+                    font-size: $augmentedFourthSize4;
+                    /**
+        1 lines of 3.998 * 1.6 = 6.3968
+        **/
+                    text-align: left;
+                }
+            }
+        }
+        nav {
+            position: static;
+            clear: both;
+            width: $widthFull;
+            padding: 0;
+            >ul>li {
+                width: 20%;
+                float: left;
+                background-color: $white;
+                >a {
+                    font-size: $augmentedFourthSize1;
+                    line-height: $doubleSize;
+                    min-height: $doubleSize;
+                    border: none;
+                    border-left: 1px solid $lightGrey;
+                    padding: 0 $defaultSize;
+                    margin: $defaultSize 0;
+                    background-color: $white;
+                }
+                :first-child a {
+                    border-left: none;
+                }
+            }
+        }
+    }
+    .focal,
+    .content1,
+    .content2,
+    footer {
+        width: 1400px;
+        margin: 0 auto;
+    }
+    h2 {
+        font-size: $augmentedFourthSize4;
+        width: 600px;
+        margin: 0 auto;
+    }
+    p.author {
+        width: 600px;
+        margin: 0 auto;
+    }
+    .col-3 {
+        float: left;
+        width: 30%;
+        margin-left: 5%;
+        :first-child {
+            margin-left: 0;
+        }
+    }
+    .col-4 {
+        width: 22%;
+        margin-left: 4%;
+        float: left;
+        :first-child {
+            margin-left: 0;
+        }
+    }
+    .content1 h3 {
+        font-size: $augmentedFourthSize3;
+        font-weight: 100;
+        .fa-2x {
+            font-size: $augmentedFourthSize3;
+            padding-right: $defaultSize;
+            vertical-align: middle;
+        }
+    }
+    .content2 {
+        h4,
+        li {
+            font-size: $augmentedFourthSize2;
+        }
+        p {
+            font-size: $augmentedFourthSize1;
+            font-weight: 400;
+        }
+    }
+    footer p {
+        font-size: $augmentedFourthSize1;
+        letter-spacing: 0.2rem;
+        :last-child {
+        color: $lightGrey;
+    }
+    }
+    .fa-circle {
+        color: $medBlue;
+    }
+    h4[lang=en] {
+        display: block;
+    }
+    h4[lang=de],
+    h4[lang=ar],
+    h4[lang=ru] {
+        display: none;
+    }
+}
