@@ -2,3 +2,9 @@
     -webkit-box-sizing: $type;
     box-sizing: $type;
 }
+
+@mixin width ($width) {
+    width: $width;
+    float: left;
+    @content;
+}
