@@ -285,11 +285,12 @@ $breakpoint-large: 1400px;
         }
     }
     .col-4 {
-        @include width(22%) {margin-left: 4%;
-        :first-child {
-            margin-left: 0;
-        }}
-        
+        @include width(22%) {
+            margin-left: 4%;
+            :first-child {
+                margin-left: 0;
+            }
+        }
     }
     .content1 h3 {
         font-size: $augmentedFourthSize3;
